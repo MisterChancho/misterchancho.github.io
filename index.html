@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    Simple, single-file poem site
+    How to use:
+      1) Replace TITLE, AUTHOR, and the poem text below.
+      2) Tweak the CSS variables in :root for fast customization.
+      3) Save as index.html and open locally to preview.
+      4) Deploy to GitHub Pages (repo: yourusername.github.io).
+  -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Manic — Carlos Aurelio Garcia</title>
+  <meta name="description" content="A poem by Your Name." />
+  <meta property="og:title" content="Title of Poem — Your Name" />
+  <meta property="og:description" content="A poem by Your Name." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="" /> <!-- Optional: add absolute URL to a cover image -->
+  <meta name="theme-color" content="#f5efe6" />
+  
+  <!-- Optional: Google Font (swap with your favorite or remove and rely on system fonts) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&display=swap" rel="stylesheet">
+
+  <style>
+    /* ----------------------
+       Quick theme variables
+       Change these to customize
+    ------------------------- */
+    :root {
+      --bg: #f5efe6;           /* page background */
+      --card: #ffffff;         /* poem card background */
+      --ink: #1f2937;          /* main text color */
+      --muted: #6b7280;        /* subtle text */
+      --accent: #3b82f6;       /* links / accents */
+      --maxw: 900px;           /* poem width */
+      --radius: 16px;          /* card corner radius */
+      --shadow: 0 10px 24px rgba(0,0,0,0.08);
+      --pad: clamp(16px, 3vw, 28px);
+    }
+
+    /* Minimal reset */
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: radial-gradient(1200px 800px at 15% 10%, rgba(0,0,0,0.03), transparent),
+                  radial-gradient(800px 600px at 85% 90%, rgba(0,0,0,0.04), transparent),
+                  var(--bg);
+      font-family: "Merriweather", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+      line-height: 1.6;
+      display: grid;
+      place-items: center;
+      padding: clamp(16px, 4vw, 48px);
+    }
+
+    .poem-card {
+      width: min(100%, var(--maxw));
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: calc(var(--pad) * 1.25);
+    }
+
+    header { text-align: center; margin-bottom: 1.2rem; }
+    h1 {
+      margin: 0 0 0.25rem 0;
+      font-size: clamp(1.6rem, 2vw + 1rem, 2.25rem);
+      line-height: 1.2;
+      letter-spacing: 0.2px;
+    }
+    .author {
+      margin: 0;
+      color: var(--muted);
+      font-style: italic;
+      font-size: 0.95rem;
+    }
+
+    /* The poem block preserves your linebreaks */
+    .poem {
+      white-space: pre-wrap;    /* keep line breaks */
+      word-wrap: break-word;    /* avoid overflow on very long words */
+      font-size: clamp(1rem, 0.6vw + 0.95rem, 1.125rem);
+      line-height: 1.8;
+      margin-top: 1.25rem;
+    }
+
+    /* Optional footer for links or a date */
+    footer {
+      margin-top: 1.5rem;
+      display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center; justify-content: center;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Small screen polish */
+    @media (max-width: 480px) {
+      .poem-card { padding: var(--pad); }
+    }
+
+    /* Optional: classy drop cap for the very first letter */
+    .poem.dropcap:first-letter {
+      float: left;
+      font-size: 3.2em;
+      line-height: 0.9;
+      padding-right: 0.15em;
+      padding-top: 0.05em;
+      font-weight: 700;
+      color: var(--ink);
+      opacity: 0.9;
+    }
+
+    /* Optional dark mode (auto) */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b0f14;
+        --card: #0f141a;
+        --ink: #e5e7eb;
+        --muted: #9ca3af;
+        --shadow: 0 10px 24px rgba(0,0,0,0.5);
+      }
+      meta[name="theme-color"] { content: #0b0f14; }
+    }
+  </style>
+</head>
+<body>
+  <main class="poem-card" role="main">
+    <header>
+      <h1>Mania</h1>
+      <p class="author">by Carlos Aurelio Garcia • <time datetime="2025-10-26">October 26, 2025</time></p>
+    </header>
+
+    <!-- Add class "dropcap" below if you want a decorative first letter. -->
+    <article class="poem" aria-label="Poem text">
+      I can feel the tar stuck on my lips. 
+      the tar has stained me. 
+      what once was quiet and desolate
+      is now ignited and flame. The heat is too much. 
+      did I create the fire and ignite the flame?
+      do I douse my soul to cleanse?
+      or do I accept that I am both the flame’s wielder 
+      and the plump greenery that needs to be burned to ash?
+      this Great Death will be the cause of such great Life.
+      it is for life to decide what to do and not that which gave its own life.
+      we are all wandering in the field of the living, 
+      guided by those around us, surrounded by the mists of time.
+      like Us, those guides wield a flame,
+      and each flame adds atop one another so that 
+      our flames compound and create an even greater flame.
+      those with blazes still roaring need to be the spark for the flames
+      that have withered away. so as a shimmering light is focused by a mirror 
+      I set my heart ablaze in a path of passion and love. the falling son 
+      often ignores the pain if his father is smiling. and in that moment 
+      where sons and fathers bond, the eternal sin is carried from generation to generation.
+    </article>
+  </main>
+</body>
+</html>
